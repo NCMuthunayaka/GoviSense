@@ -76,7 +76,7 @@
   min-height: 100vh;
 }
 
-.prototype-switcher {
+.workspace-switcher {
   position: fixed;
   z-index: 100;
   top: 14px;
@@ -93,7 +93,7 @@
   backdrop-filter: blur(12px);
 }
 
-.prototype-switcher > span {
+.workspace-switcher > span {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -103,12 +103,12 @@
   font-weight: 700;
 }
 
-.prototype-switcher > div {
+.workspace-switcher > div {
   display: flex;
   gap: 2px;
 }
 
-.prototype-switcher button {
+.workspace-switcher button {
   display: flex;
   min-height: 34px;
   align-items: center;
@@ -123,7 +123,7 @@
   cursor: pointer;
 }
 
-.prototype-switcher button.active {
+.workspace-switcher button.active {
   background: var(--primary-dark);
   color: white;
 }
@@ -4655,6 +4655,185 @@
   }
 }
 
+/* Product surface */
+:root {
+  --primary: #087f5b;
+  --primary-hover: #066b4c;
+  --primary-dark: #123b2a;
+  --primary-tint: #e8f6f0;
+  --ink: #13231c;
+  --background: #f4f7f5;
+  --surface: #ffffff;
+  --neutral-200: #dce7e1;
+  --neutral-100: #edf3ef;
+  --shadow-sm: 0 2px 8px rgba(18, 59, 42, 0.05);
+  --shadow-md: 0 12px 30px rgba(18, 59, 42, 0.08);
+  --shadow-lg: 0 24px 70px rgba(18, 59, 42, 0.16);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+}
+
+body {
+  background:
+    radial-gradient(circle at 90% -10%, rgba(8, 127, 91, 0.1), transparent 30rem),
+    var(--background);
+}
+
+.workspace-switcher {
+  top: 18px;
+  padding: 6px;
+  border: 1px solid rgba(220, 231, 225, 0.9);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.workspace-switcher > span {
+  padding: 0 14px 0 10px;
+  color: var(--primary-dark);
+  font-size: 13px;
+}
+
+.workspace-switcher button {
+  min-height: 36px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.workspace-switcher button.active {
+  background: var(--primary-dark);
+  box-shadow: 0 3px 8px rgba(18, 59, 42, 0.18);
+}
+
+.sidebar {
+  width: 248px;
+  border-right-color: rgba(220, 231, 225, 0.85);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  height: 96px;
+  padding: 0 26px;
+}
+
+.brand__mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--primary-dark);
+  box-shadow: 0 8px 18px rgba(18, 59, 42, 0.18);
+}
+
+.officer-main {
+  width: calc(100% - 248px);
+  margin-left: 248px;
+}
+
+.officer-topbar {
+  min-height: 84px;
+  padding: 12px 36px;
+  border-bottom-color: rgba(220, 231, 225, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.officer-content {
+  padding: 48px 36px 64px;
+}
+
+.page-heading {
+  margin-bottom: 30px;
+}
+
+.page-heading h1,
+.system-header h1 {
+  font-size: clamp(30px, 3vw, 40px);
+  letter-spacing: -0.05em;
+}
+
+.panel,
+.system-card {
+  border-color: rgba(220, 231, 225, 0.9);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.analysis-grid,
+.dashboard-grid {
+  gap: 20px;
+}
+
+.button {
+  min-height: 44px;
+  border-radius: 11px;
+  font-weight: 700;
+}
+
+.button--primary {
+  box-shadow: 0 5px 12px rgba(8, 127, 91, 0.2);
+}
+
+.icon-button {
+  border-radius: 11px;
+}
+
+.mobile-note {
+  display: none;
+}
+
+.farmer-stage {
+  min-height: 100vh;
+  padding-top: 76px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(8, 127, 91, 0.1), transparent 24rem),
+    var(--background);
+}
+
+.phone {
+  border-color: rgba(220, 231, 225, 0.9);
+  border-radius: 30px;
+  box-shadow: var(--shadow-lg);
+}
+
+.demo-ribbon {
+  border-bottom-left-radius: 14px;
+  background: #dff4e9;
+  color: var(--primary-dark);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .officer-main {
+    width: calc(100% - 72px);
+    margin-left: 72px;
+  }
+
+  .brand {
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .workspace-switcher {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .farmer-stage {
+    padding-top: 64px;
+  }
+
+  .officer-content {
+    padding: 32px 18px 48px;
+  }
+}
+
 @media (max-width: 1180px) {
   .officer-topbar .select-control:nth-child(2),
   .officer-topbar .select-control:nth-child(3),
@@ -4673,17 +4852,17 @@
 }
 
 @media (max-width: 900px) {
-  .prototype-switcher {
+  .workspace-switcher {
     top: 8px;
     width: calc(100% - 20px);
     justify-content: center;
   }
 
-  .prototype-switcher > span {
+  .workspace-switcher > span {
     display: none;
   }
 
-  .prototype-switcher button {
+  .workspace-switcher button {
     padding: 0 8px;
   }
 
@@ -4745,11 +4924,11 @@
 }
 
 @media (max-width: 640px) {
-  .prototype-switcher button span {
+  .workspace-switcher button span {
     display: none;
   }
 
-  .prototype-switcher button {
+  .workspace-switcher button {
     min-width: 72px;
     justify-content: center;
   }

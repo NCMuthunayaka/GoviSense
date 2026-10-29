@@ -35,7 +35,6 @@ import {
   Menu,
   MoreHorizontal,
   PackageOpen,
-  PanelLeftClose,
   PencilLine,
   Plus,
   RefreshCw,
@@ -191,7 +190,7 @@ function ConfidenceBadge({ level }: { level: Confidence }) {
 }
 
 function DemoRibbon() {
-  return <div className="demo-ribbon">DEMO DATA</div>
+  return <div className="demo-ribbon">SAMPLE DATA</div>
 }
 
 const baseSupply = [
@@ -3415,7 +3414,7 @@ function DesignSystem() {
           </div>
           <div>
             <strong>GoviSense</strong>
-            <span>Design system · 1.0</span>
+            <span>Component library · 1.0</span>
           </div>
         </div>
         <div className="system-index">
@@ -3738,13 +3737,13 @@ export default function App() {
   return (
     <div className="app-shell">
       <div
-        className="prototype-switcher"
+        className="workspace-switcher"
         role="navigation"
-        aria-label="Prototype views"
+        aria-label="Workspace views"
       >
         <span>
           <Sprout size={16} />
-          Prototype
+          GoviSense
         </span>
         <div>
           <button
@@ -3752,8 +3751,8 @@ export default function App() {
             onClick={() => setView("officer")}
             type="button"
           >
-            <PanelLeftClose size={15} />
-            Officer hero
+            <BarChart3 size={15} />
+            Officer dashboard
           </button>
           <button
             className={view === "farmer" ? "active" : ""}
@@ -3761,21 +3760,12 @@ export default function App() {
             type="button"
           >
             <Menu size={15} />
-            Farmer hero
-          </button>
-          <button
-            className={view === "system" ? "active" : ""}
-            onClick={() => setView("system")}
-            type="button"
-          >
-            <SlidersHorizontal size={15} />
-            Design system
+            Farmer app
           </button>
         </div>
       </div>
       {view === "officer" && <OfficerScreen />}
       {view === "farmer" && <FarmerScreen />}
-      {view === "system" && <DesignSystem />}
     </div>
   )
 }
