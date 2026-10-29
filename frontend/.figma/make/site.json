@@ -1,0 +1,10 @@
+{
+  "description": "Supports Sri Lankan agriculture officers and farmers with crop supply forecasts, market-risk insights, planting guidance, and timely decision support.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
